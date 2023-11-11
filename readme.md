@@ -90,7 +90,8 @@ Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über 
 | Hersteller | 8 | | |
 | Reset | 8 |  | Durch Eingeben eines Wertes 8, werden alle Einstellungen auf Default gesetzt |
 | Im Analogbetrieb aktive Ausgänge | 13 | 0 - 255 (0) | AUX 1 ein = 1<br>AUX 2 ein = 2<br>AUX 3 ein = 4<br>AUX 4 ein = 8<br>AUX 5 ein = 16 |
-| Decoderlock | 1516 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
+| Decoderlock | 15 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
+| Decoderlock | 16 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
 | Erweiterte Adresse | 17 | 192 - 255 (0) | Nur für DCC-Format. Bei den meisten Zentralen ist es möglich, <br> erweiterte Adressendirekt einzugeben. Die CVs 17, 18 und 29 <br> werden von der Zentrale automatisch richtig eingestellt. |
 | Erweiterte Adresse | 18 | 0 - 255 (3) |
 | Konfigurationsdaten | 29 | 0 - 64 (2) | Fahrtrichtung Standard = 0 <br>Fahrtrichtung invertiert = 1 <br>14 Fahrstufen = 0 <br>28 oder 128 Fahrstufen 2 <br>Basisadressen = 0 <br>Erweiterte Adressen = 32 |
