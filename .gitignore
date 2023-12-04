@@ -12,6 +12,7 @@
 
 # Files built by 
 /sch/*.b#*
+/sch/*.s#*
 /sch/*.pro
 
 
