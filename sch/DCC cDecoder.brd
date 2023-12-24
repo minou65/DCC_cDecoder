@@ -152,8 +152,8 @@ Nicht zu heiss Löten max 300°C </text>
 <text x="5.08" y="5.715" size="0.6096" layer="26" rot="MR0">Aux2</text>
 <text x="281.432" y="2.921" size="0.6096" layer="26" rot="MR0">VCC</text>
 <text x="281.432" y="5.461" size="0.6096" layer="26" rot="MR0">AUX1</text>
-<dimension x1="0" y1="0" x2="285" y2="0" x3="142.5" y3="-6.35" textsize="1.778" layer="1"/>
-<dimension x1="0" y1="10" x2="0" y2="0" x3="-3.81" y3="5" textsize="1.778" layer="1"/>
+<dimension x1="0" y1="0" x2="285" y2="0" x3="142.5" y3="-6.35" textsize="1.778" layer="51"/>
+<dimension x1="0" y1="10" x2="0" y2="0" x3="-3.81" y3="5" textsize="1.778" layer="51"/>
 </plain>
 <libraries>
 <library name="wirepad" urn="urn:adsk.eagle:library:412">
