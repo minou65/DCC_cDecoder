@@ -5,15 +5,7 @@
 
  Bemerkungen:
 
- Settings Attiny85
-    Library  : https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json,
-    Board    : Attiny25/45/85
-    Prozessor: Attiny85
-    Clock    : Internal 16Mhz
-    Programmer: Diamex USB ISP oder ATMEL STK500
-
-    Zuerst mit den obenstehenden settings den Bootloader schreiben, dann den code schreiben
-    Bootloader muss ev. der Arduino IDE geschrieben werden
+siehe readme.md Programmieren des prozessors
 
 */
 
@@ -129,7 +121,6 @@ uint8_t newSound = 0;
 #error "Unsupported CPU, you need to add another configuration section for your CPU"
 #endif 
 
-
 /* a=target variable, b=bit number to act upon 0-n */
 #define BIT_SET(a,b) ((a) |= (1ULL<<(b)))
 #define BIT_CLEAR(a,b) ((a) &= ~(1ULL<<(b)))
@@ -158,7 +149,6 @@ uint8_t numSpeedSteps = SPEED_STEP_128;
 uint8_t vStart;
 uint8_t vHigh;
 uint8_t analogMode;
-
 
 #define AUX1 0
 #define AUX2 1
