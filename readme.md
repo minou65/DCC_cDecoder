@@ -172,7 +172,15 @@ Default bei cDecoder ist 3 |
 
 ## Programmieren des prozessors
 
-    Library  : https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json,
+Um den Prozessor zu programmieren wird ein ISP Programmer benötigt. Der Prozessor kann mit der Arduino IDE programmiert werden. Dazu muss der Prozessor als Board hinzugefügt werden.
+Dazu unter Datei -> Voreinstellungen -> Zusätzliche Boardverwalter-URLs: https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json einfügen.
+
+Der Bootloader muss möglicherweise mit der Arduino IDE auf den Prozessor geladen werden. Dazu muss der Prozessor mit einem Programmer verbunden werden.
+- Arduino AVR Boards installieren unter Werkzeuge -> Board -> Boardverwalter... -> Arduino AVR Boards installieren.
+- In der Arduino IDE unter Werkzeuge -> Board -> Boardverwalter... -> attiny auswählen und installieren. Danach kann der Prozessor als Board ausgewählt werden. 
+- Bei Prozessor muss ATtiny85 (internal 16 MHz) ausgewählt werden. 
+- Der Programmer wird auf Diamex USB ISP oder ATMEL STK500 gestellt. 
+
     Board    : Attiny25/45/85
     Prozessor: Attiny85
     Clock    : Internal 16Mhz
