@@ -173,15 +173,26 @@ Default bei cDecoder ist 3 |
 ## Programmieren des prozessors
 
 Um den Prozessor zu programmieren wird ein ISP Programmer benötigt. Der Prozessor kann mit der Arduino IDE programmiert werden. Dazu muss der Prozessor als Board hinzugefügt werden.
-Dazu unter Datei -> Voreinstellungen -> Zusätzliche Boardverwalter-URLs: https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json einfügen.
-
-Der Bootloader muss möglicherweise mit der Arduino IDE auf den Prozessor geladen werden. Dazu muss der Prozessor mit einem Programmer verbunden werden.
+- Dazu unter Datei -> Voreinstellungen -> Zusätzliche Boardverwalter-URLs: https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json einfügen.
 - Arduino AVR Boards installieren unter Werkzeuge -> Board -> Boardverwalter... -> Arduino AVR Boards installieren.
-- In der Arduino IDE unter Werkzeuge -> Board -> Boardverwalter... -> attiny auswählen und installieren. Danach kann der Prozessor als Board ausgewählt werden. 
-- Bei Prozessor muss ATtiny85 (internal 16 MHz) ausgewählt werden. 
-- Der Programmer wird auf Diamex USB ISP oder ATMEL STK500 gestellt. 
+- In der Arduino IDE unter Werkzeuge -> Board -> Boardverwalter... -> attiny auswählen und installieren. 
 
+Danach das Board wie folgt konfigurieren
     Board    : Attiny25/45/85
     Prozessor: Attiny85
     Clock    : Internal 16Mhz
     Programmer: Diamex USB ISP oder ATMEL STK500 (Für Windows 10 ist kein Treiber erforderlich)
+
+
+Nun kann zuerst der Bootloader und danach die Firmware auf den Prozessor geschrieben werden. Unter visual Micro kommt folgende Fehlermeldung beim schreiben des Bootloaders
+
+```
+Error while burning bootloader.
+Burn failed
+avrdude: can't open input file aders/{bootloader.file}: No such file or directory
+avrdude: read from file oaders/{bootloader.file}' failed
+```
+
+Dies ist normal, der Attiny hat keine Bootloader visual Micro sucht diesen aber und findet ihn nicht. Die Fuse und Clock settings werden aber geschrieben bevor der Bootloader geschrieben wird.
+https://www.visualmicro.com/forums/YaBB.pl?num=1607630288
+
