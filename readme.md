@@ -119,7 +119,7 @@ Default bei cDecoder ist 3 |
 ### Modus der Ausgänge
 | Bezeichnung | CV | Wertbereich <br> (default) | Beschreibung |
 |---|:--------:|---|---|
-| AUX 1 | 66 | 0 - 31 (1) | Ein / Aus = 1 <br> Blinker = 2 <br> Impuls = 3 <br> Ein bei einschalten = 4 |
+| AUX 1 | 66 | 0 - 31 (1) | Ein / Aus = 1 <br> Blinker = 2 <br> Impuls = 3 <br> Ein bei einschalten = 4 (ab Version 3)|
 | AUX 2 | 67 | 0 - 31 (1) | |
 | AUX 3 | 68 | 0 - 31 (1) | |
 | AUX 4 | 69 | 0 - 31 (2) | |
