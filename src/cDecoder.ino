@@ -56,7 +56,7 @@ uint8_t newSound = 0;
 #define DEFAULT_DECODER_ADDRESS 3
 
 // This is the version
-#define DECODER_VERSION 2
+#define DECODER_VERSION 3
 
 
 #ifdef __AVR_ATmega328P__
