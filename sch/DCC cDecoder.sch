@@ -8484,42 +8484,74 @@ Ingenieurbüro ing-rb, &lt;i&gt;mail@ing-rb.de&lt;/i&gt;&lt;/p&gt;&lt;/author&gt
 http://www.zetex.com&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="SM8" urn="urn:adsk.eagle:footprint:30951/1" library_version="5">
-<description>&lt;b&gt;SM8 Package&lt;/b&gt;</description>
-<wire x1="3.177" y1="1.778" x2="3.177" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="3.177" y1="-1.778" x2="-3.177" y2="-1.778" width="0.2032" layer="21"/>
-<wire x1="-3.177" y1="-1.778" x2="-3.177" y2="1.778" width="0.2032" layer="21"/>
-<wire x1="-3.177" y1="1.778" x2="3.177" y2="1.778" width="0.2032" layer="21"/>
-<wire x1="-2.9" y1="1.7" x2="-2.9" y2="-0.9" width="0.1016" layer="25"/>
-<wire x1="-2.9" y1="-0.9" x2="2.9" y2="-0.9" width="0.1016" layer="25"/>
-<wire x1="2.9" y1="-0.9" x2="2.9" y2="1.7" width="0.1016" layer="25"/>
-<wire x1="-2.9" y1="-0.9" x2="-3.1" y2="-1.7" width="0.1016" layer="25"/>
-<wire x1="2.9" y1="-0.9" x2="3.1" y2="-1.7" width="0.1016" layer="25"/>
-<smd name="1" x="-2.286" y="-3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="2" x="-0.762" y="-3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="3" x="0.762" y="-3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="4" x="2.286" y="-3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="5" x="2.286" y="3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="6" x="0.762" y="3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="7" x="-0.762" y="3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<smd name="8" x="-2.286" y="3.0988" dx="1.016" dy="2.2352" layer="1"/>
-<text x="-2.54" y="0.0508" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.3792" y="-3.09" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-2.636" y1="-3.65" x2="-1.936" y2="-1.9" layer="51"/>
-<rectangle x1="-1.112" y1="-3.65" x2="-0.412" y2="-1.9" layer="51"/>
-<rectangle x1="0.412" y1="-3.65" x2="1.112" y2="-1.9" layer="51"/>
-<rectangle x1="1.936" y1="-3.65" x2="2.636" y2="-1.9" layer="51"/>
-<rectangle x1="1.936" y1="1.9" x2="2.636" y2="3.65" layer="51"/>
-<rectangle x1="0.412" y1="1.9" x2="1.112" y2="3.65" layer="51"/>
-<rectangle x1="-1.112" y1="1.9" x2="-0.412" y2="3.65" layer="51"/>
-<rectangle x1="-2.636" y1="1.9" x2="-1.936" y2="3.65" layer="51"/>
+<package name="SO8" urn="urn:adsk.eagle:footprint:30958/1" library_version="5">
+<description>&lt;b&gt;SMALL OUTLINE INTEGRATED CIRCUIT&lt;/b&gt; SOP-8L&lt;p&gt;
+Source: http://www.diodes.com/datasheets/ds31262.pdf</description>
+<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<text x="-3.175" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.1501" y1="-3.1001" x2="-1.6599" y2="-2" layer="51"/>
+<rectangle x1="-0.8801" y1="-3.1001" x2="-0.3899" y2="-2" layer="51"/>
+<rectangle x1="0.3899" y1="-3.1001" x2="0.8801" y2="-2" layer="51"/>
+<rectangle x1="1.6599" y1="-3.1001" x2="2.1501" y2="-2" layer="51"/>
+<rectangle x1="1.6599" y1="2" x2="2.1501" y2="3.1001" layer="51"/>
+<rectangle x1="0.3899" y1="2" x2="0.8801" y2="3.1001" layer="51"/>
+<rectangle x1="-0.8801" y1="2" x2="-0.3899" y2="3.1001" layer="51"/>
+<rectangle x1="-2.1501" y1="2" x2="-1.6599" y2="3.1001" layer="51"/>
+</package>
+<package name="MSOP8" urn="urn:adsk.eagle:footprint:30957/1" library_version="5">
+<description>&lt;b&gt;Micro Small Outline Package&lt;/b&gt;</description>
+<wire x1="-1.4" y1="1.4" x2="1.4" y2="1.4" width="0.2032" layer="21"/>
+<wire x1="1.4" y1="1.4" x2="1.4" y2="-1.4" width="0.2032" layer="21"/>
+<wire x1="1.4" y1="-1.4" x2="-1.4" y2="-1.4" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="-1.4" x2="-1.4" y2="1.4" width="0.2032" layer="21"/>
+<circle x="-1" y="-1" radius="0.2" width="0" layer="21"/>
+<smd name="1" x="-0.975" y="-2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="2" x="-0.325" y="-2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="3" x="0.325" y="-2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="4" x="0.975" y="-2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="5" x="0.975" y="2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="6" x="0.325" y="2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="7" x="-0.325" y="2.05" dx="0.45" dy="1" layer="1"/>
+<smd name="8" x="-0.975" y="2.05" dx="0.45" dy="1" layer="1"/>
+<text x="-1.15" y="0.15" size="1.016" layer="25">&gt;NAME</text>
+<text x="-0.65" y="-1.05" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.1254" y1="-2.45" x2="-0.8254" y2="-1.5" layer="51"/>
+<rectangle x1="-0.4751" y1="-2.45" x2="-0.1751" y2="-1.5" layer="51"/>
+<rectangle x1="0.1751" y1="-2.45" x2="0.4751" y2="-1.5" layer="51"/>
+<rectangle x1="0.8253" y1="-2.45" x2="1.1253" y2="-1.5" layer="51"/>
+<rectangle x1="0.8254" y1="1.5" x2="1.1254" y2="2.45" layer="51"/>
+<rectangle x1="0.1751" y1="1.5" x2="0.4751" y2="2.45" layer="51"/>
+<rectangle x1="-0.4751" y1="1.5" x2="-0.1751" y2="2.45" layer="51"/>
+<rectangle x1="-1.1253" y1="1.5" x2="-0.8253" y2="2.45" layer="51"/>
 </package>
 </packages>
 <packages3d>
-<package3d name="SM8" urn="urn:adsk.eagle:package:30984/2" type="model" library_version="5">
-<description>SM8 Package</description>
+<package3d name="SO8" urn="urn:adsk.eagle:package:30987/2" type="model" library_version="5">
+<description>SMALL OUTLINE INTEGRATED CIRCUIT SOP-8L
+Source: http://www.diodes.com/datasheets/ds31262.pdf</description>
 <packageinstances>
-<packageinstance name="SM8"/>
+<packageinstance name="SO8"/>
+</packageinstances>
+</package3d>
+<package3d name="MSOP8" urn="urn:adsk.eagle:package:30988/2" type="model" library_version="5">
+<description>Micro Small Outline Package</description>
+<packageinstances>
+<packageinstance name="MSOP8"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -8558,14 +8590,14 @@ http://www.zetex.com&lt;p&gt;
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="NMOS2SM8" urn="urn:adsk.eagle:component:31019/3" prefix="T" uservalue="yes" library_version="5">
+<deviceset name="NMOS2" urn="urn:adsk.eagle:component:31038/3" prefix="T" uservalue="yes" library_version="5">
 <description>Dual &lt;b&gt;MOS FET&lt;/b&gt;</description>
 <gates>
 <gate name="A" symbol="N_MOSFET" x="0" y="7.62"/>
 <gate name="B" symbol="N_MOSFET" x="0" y="-7.62"/>
 </gates>
 <devices>
-<device name="" package="SM8">
+<device name="MSOP8" package="MSOP8">
 <connects>
 <connect gate="A" pin="D" pad="7 8"/>
 <connect gate="A" pin="G" pad="2"/>
@@ -8575,7 +8607,7 @@ http://www.zetex.com&lt;p&gt;
 <connect gate="B" pin="S" pad="3"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:30984/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:30988/2"/>
 </package3dinstances>
 <technologies>
 <technology name="">
@@ -8584,6 +8616,28 @@ http://www.zetex.com&lt;p&gt;
 <attribute name="OC_FARNELL" value="unknown" constant="no"/>
 <attribute name="OC_NEWARK" value="unknown" constant="no"/>
 <attribute name="POPULARITY" value="0" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="SO8" package="SO8">
+<connects>
+<connect gate="A" pin="D" pad="7 8"/>
+<connect gate="A" pin="G" pad="2"/>
+<connect gate="A" pin="S" pad="1"/>
+<connect gate="B" pin="D" pad="5 6"/>
+<connect gate="B" pin="G" pad="4"/>
+<connect gate="B" pin="S" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:30987/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="POPULARITY" value="1" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -16568,7 +16622,7 @@ Source: Comchip CGRM4001-G.pdf</description>
 <part name="VCC1" library="wirepad" library_urn="urn:adsk.eagle:library:412" deviceset="SMD2" device="" package3d_urn="urn:adsk.eagle:package:30839/1" value="VCC1"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="DINA3_L" device=""/>
 <part name="U1" library="attiny25_45_85" deviceset="ATTINY85*" device="S" technology="-20"/>
-<part name="T1" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="NMOS2SM8" device="" package3d_urn="urn:adsk.eagle:package:30984/2" value="SI9945BDY"/>
+<part name="T1" library="zetex" library_urn="urn:adsk.eagle:library:418" deviceset="NMOS2" device="SO8" package3d_urn="urn:adsk.eagle:package:30987/2" value="SI9945BDY"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="22k"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
