@@ -12,8 +12,8 @@ siehe readme.md Programmieren des prozessors
 
 
 // ONLY uncomment 1 line below as approprate
-//#define fDecoder;
-#define cDecoder;
+#define fDecoder;
+//#define cDecoder;
 //#define sDecoder;
 
 // Uncomment to force CV Reset to Factory Defaults
@@ -134,6 +134,9 @@ uint8_t newSound = 0;
 #define BITMASK_CHECK_ALL(x,y) (((x) & (y)) == (y))   // warning: evaluates y twice
 #define BITMASK_CHECK_ANY(x,y) ((x) & (y))
 
+// Bitmask array
+const uint8_t bitmask[] = { 1, 2, 4, 8, 16 };
+
 // Some global state variables
 
 uint8_t lastAUXState = 0;  // Save the State for the Outputs
@@ -149,6 +152,7 @@ uint8_t numSpeedSteps = SPEED_STEP_128;
 uint8_t vStart;
 uint8_t vHigh;
 uint8_t analogMode;
+uint8_t AllwaysOn;
 
 #define AUX1 0
 #define AUX2 1
@@ -246,6 +250,8 @@ struct CVPair
 
 #define CV_AUX_Save     122
 #define CV_AUX_State    255
+
+#define CV_ALLWAYS_ON   123
 
 #ifdef sDecoder
 
@@ -686,6 +692,8 @@ void SetFuncState(uint8_t Func, uint8_t state) {
         if (BIT_CHECK(value, i)) {
             Aux[i].newState(state);
         }
+
+        Aux[i].newState(BIT_CHECK(AllwaysOn, bitmask[i]));
     }
 
 #ifdef sDecoder
@@ -800,13 +808,12 @@ void initDecoder() {
         Aux[AUX5].SetAutoOff(Dcc.getCV(CV_AUX5_AUTO_OFF));
     }
 
-
-
     // Read the current CV values for vStart and vHigh
     vStart = Dcc.getCV(CV_VSTART);
     vHigh = Dcc.getCV(CV_VHIGH);
 
     analogMode = Dcc.getCV(CV_ANALOG_MODE);
+    AllwaysOn = Dcc.getCV(CV_ALLWAYS_ON);
 
     lastAUXState = Dcc.getCV(CV_AUX_State);
     saveAUXState = bool(Dcc.getCV(CV_AUX_Save));

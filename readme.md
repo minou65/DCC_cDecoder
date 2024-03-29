@@ -6,6 +6,7 @@
   - [Funktionen](#funktionen)
   - [Programmierung](#programmierung)
   - [Analog Betrieb](#analog-betrieb)
+  - [Immer ein](#immer-ein)
   - [Powerpack](#powerpack)
   - [Dimmen der Ausgänge](#dimmen-der-ausgänge)
   - [Anschlüsse](#anschlüsse)
@@ -37,8 +38,11 @@
 Um den Decoder auf dem Programmiergleis programmieren zu können muss eine Last an AUX 1 angeschlossen werden, die mindestens einen Strom von 60mA erzeugt.
 
 ## Analog Betrieb
-
 Wird während 100ms kein DCC Signal erkannt, werden die Funktionen gemäss CV 13 aktiviert
+
+## Immer ein
+Ab Version 3 untersützt die Firmware CV 123, damit können Ausgänge definiert werden, welche beim anlagen einer Spannung sofort eingeschaltet werden.
+Eingeführt für die Rheinbrücke beim Modell Eisenbahn Club Seebezirk (MECS), Fräschels (CH)
 
 ## Powerpack
 
@@ -95,7 +99,8 @@ Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über 
 | Erweiterte Adresse | 17 | 192 - 255 (0) | Nur für DCC-Format. Bei den meisten Zentralen ist es möglich, <br> erweiterte Adressendirekt einzugeben. Die CVs 17, 18 und 29 <br> werden von der Zentrale automatisch richtig eingestellt. |
 | Erweiterte Adresse | 18 | 0 - 255 (3) |
 | Konfigurationsdaten | 29 | 0 - 64 (2) | Fahrtrichtung Standard = 0 <br>Fahrtrichtung invertiert = 1 <br>14 Fahrstufen = 0 <br>28 oder 128 Fahrstufen 2 <br>Basisadressen = 0 <br>Erweiterte Adressen = 32 |
-| Betriebszustand | 122 | 0/1 (0) | Speicher den Betriebszustand der Ausgänge. <br>0 = Aus <br>1 = Ein |
+| Betriebszustand | 122 | 0/1 (0) | Den Betriebszustand der Ausgänge speichern. <br>0 = Aus <br>1 = Ein |
+| Immer eingeschaltet<br>(ab Version 3) | 123 | 0 - 255 (0) | AUX 1 ein = 1<br>AUX 2 ein = 2<br>AUX 3 ein = 4<br>AUX 4 ein = 8<br>AUX 5 ein = 16 |
 
 ### Zuordnung Ausgänge zu Funktionstasten
 | Bezeichnung | CV | Wertbereich <br> (default) | Beschreibung |
@@ -109,9 +114,8 @@ Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über 
 ### Funktion aktiv bei
 | Bezeichnung | CV | Wertbereich <br> (default) | Beschreibung |
 |---|:--------:|---|---|
-| AUX 1 | 61 | 0 - 31 (1) | Vorwärts = 1 <br> Rückwärts = 2 <br> Beide = 3 <br> Default bei cDecoder ist 3 |
-| AUX 2 | 62 | 0 - 31 (2) |
-Default bei cDecoder ist 3 |
+| AUX 1 | 61 | 0 - 31 (1) | Vorwärts = 0 <br> Rückwärts = 1 <br> Beide = 3 <br> Default bei cDecoder ist 3 |
+| AUX 2 | 62 | 0 - 31 (2) | Default bei cDecoder ist 3 |
 | AUX 3 | 63 | 0 - 31 (3) | |
 | AUX 4 | 64 | 0 - 31 (3) | |
 | AUX 5 | 65 | 0 - 31 (3) | |
