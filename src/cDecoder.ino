@@ -1006,16 +1006,14 @@ void loop() {
     Dcc.process();
 
 
-    // if we do not recive in a certin time a dcc signal, then we are in analog mode
+    // If we do not receive a DCC signal within a certain time, then we are in analog mode
     if (millis() - lastDCCTime >= currentDCCInterval) {
 #ifdef DEBUG_PRINT
-        // Serial.println(F("Analog mode"));
+        Serial.println(F("Analog mode"));
 #endif    
-       //for (uint8_t i = 0; i < NUM_OUTPUTS; i++) {
-       //    Aux[i].newState(BIT_CHECK(analogMode, i));
-       // }
-
-        Aux[AUX4].on();
+       for (uint8_t i = 0; i < NUM_OUTPUTS; i++) {
+           Aux[i].newState(BIT_CHECK(analogMode, bitmask[i]));
+       }
     }
 
     // Handle direction and headlight changes
