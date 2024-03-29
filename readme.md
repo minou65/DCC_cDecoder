@@ -1,8 +1,7 @@
 # cDecoder
-
-## Inhalt- [cDecoder](#cdecoder)
+## Inhalt
 - [cDecoder](#cdecoder)
-  - [Inhalt- cDecoder](#inhalt--cdecoder)
+  - [Inhalt](#inhalt)
   - [Funktionen](#funktionen)
   - [Programmierung](#programmierung)
   - [Analog Betrieb](#analog-betrieb)
@@ -11,9 +10,10 @@
   - [Dimmen der Ausgänge](#dimmen-der-ausgänge)
   - [Anschlüsse](#anschlüsse)
     - [fDecoder](#fdecoder)
-  - [cDecoder](#cdecoder-1)
-  - [PowerPack](#powerpack-1)
-  - [Farben](#farben)
+    - [cDecoder](#cdecoder-1)
+    - [PowerPack](#powerpack-1)
+    - [Farben](#farben)
+  - [Lange DCC Adresse](#lange-dcc-adresse)
   - [CV Tabelle](#cv-tabelle)
     - [Zuordnung Ausgänge zu Funktionstasten](#zuordnung-ausgänge-zu-funktionstasten)
     - [Funktion aktiv bei](#funktion-aktiv-bei)
@@ -22,19 +22,15 @@
       - [Blinker off Time](#blinker-off-time)
       - [Dimmen der Ausgänge](#dimmen-der-ausgänge-1)
       - [Automatisches abschalten](#automatisches-abschalten)
-      - [Automatisches abschalten](#automatisches-abschalten-1)
   - [Beispiele](#beispiele)
   - [Programmieren des prozessors](#programmieren-des-prozessors)
 
-
 ## Funktionen
-
 - Ein/Aus
 - Impuls
 - Blinker
 
 ## Programmierung
-
 Um den Decoder auf dem Programmiergleis programmieren zu können muss eine Last an AUX 1 angeschlossen werden, die mindestens einen Strom von 60mA erzeugt.
 
 ## Analog Betrieb
@@ -45,33 +41,29 @@ Ab Version 3 untersützt die Firmware CV 123, damit können Ausgänge definiert 
 Eingeführt für die Rheinbrücke beim Modell Eisenbahn Club Seebezirk (MECS), Fräschels (CH)
 
 ## Powerpack
-
 Ein externes Powerpack kann an den Decoder angeschlossen werden. Dazu können die Pad's VCC und GND auf der Rückseite des Decoders verwendet werden.
 
 ## Dimmen der Ausgänge
-
 Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über CV 81 und 82 eingestellt werden.
 
 ## Anschlüsse
-
 ### fDecoder
 | oben | unten |
 |---|---|
 | ![Alt text](img/fDecoder_oben.png) | ![Alt text](img/fDecoder_unten.png) |
 | __v2__ <br> ![Alt text](img/fDecoder_oben_v2.png) | |
 
-## cDecoder
+### cDecoder
 | oben | unten |
 |---|---|
 |![Alt text](img/cDecoder.png) ||
 
-## PowerPack
+### PowerPack
 | oben | unten |
 |---|---|
 | ![Alt text](img/PowerPack.png) ||
 
-## Farben
-
+### Farben
 | Draht | Verwendung |
 |--------|--------------|
 | Rot | Rail |
@@ -83,8 +75,17 @@ Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über 
 | Grün | Aux 4 |
 | Schwarz | GND |
 
-## CV Tabelle
+## Lange DCC Adresse
+Um die lange DCC-Adresse in die Register 17 und 18 umzurechnen, kann folgende Formel verwendet werden.<br><br>
+CV 17 = Adresse / 256 (nur die Stellen vor dem Komma) + 192<br>
+CV 18 = Adresse - ((CV 17 - 192) * 256)<br>
 
+Die lange Adresse wird nur verwendet, wenn das Bit 5 in CV 29 gesetzt ist
+
+Hier gibt es einen CV Rechner
+https://www.opendcc.de/info/decoder/dcc_cv.html
+
+## CV Tabelle
 | Bezeichnung | CV | Wertbereich <br> (default) | Beschreibung |
 |---|:--------:|---|---|
 | Basisadresse | 1 | 1 - 255 (3) | Wertebereich im DCC-Format 1 - 127 |
@@ -94,8 +95,8 @@ Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über 
 | Hersteller | 8 | | |
 | Reset | 8 |  | Durch Eingeben eines Wertes 8, werden alle Einstellungen auf Default gesetzt |
 | Im Analogbetrieb aktive Ausgänge | 13 | 0 - 255 (0) | AUX 1 ein = 1<br>AUX 2 ein = 2<br>AUX 3 ein = 4<br>AUX 4 ein = 8<br>AUX 5 ein = 16 |
-| Decoderlock | 15 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
-| Decoderlock | 16 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
+| Decoderlock | 15 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. <br>Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
+| Decoderlock | 16 | 0 - 255 (0) | Decoder-Lock Funktion laut NMRA. <br>Details siehe http://www.nmra.org/standards/DCC/WGpublic/0305051/0305051.html |
 | Erweiterte Adresse | 17 | 192 - 255 (0) | Nur für DCC-Format. Bei den meisten Zentralen ist es möglich, <br> erweiterte Adressendirekt einzugeben. Die CVs 17, 18 und 29 <br> werden von der Zentrale automatisch richtig eingestellt. |
 | Erweiterte Adresse | 18 | 0 - 255 (3) |
 | Konfigurationsdaten | 29 | 0 - 64 (2) | Fahrtrichtung Standard = 0 <br>Fahrtrichtung invertiert = 1 <br>14 Fahrstufen = 0 <br>28 oder 128 Fahrstufen 2 <br>Basisadressen = 0 <br>Erweiterte Adressen = 32 |
@@ -162,16 +163,11 @@ Die Ausgänge AUX 1 und AUX 2 können gedimmt werden. Die Helligkeit kann über 
 | AUX 4 | 89 | 0 - 255 (0) | |
 | AUX 5 | 90 | 0 - 255 (0) | |
 
-#### Automatisches abschalten
-| Bezeichnung | CV | Wertbereich <br> (default) | Beschreibung |
-|---|:--------:|---|---|
-| Zustand der Funktionstasten speichern | 122 | 0 / 1 (0) | |
-
 ## Beispiele
-
 |Beispiel | Einstellungen |
 |---|---|
-| SBB Schlusslicht an AUX 4 <br><br><br><br> | 64 = 36 <br> 9 = 27 <br> 4 = 1 (On Time) <br> 79 = 70 (Off Time) |
+| SBB Schlusslicht an AUX 4 <br><br><br><br> | CV64 = 36<br>CV69 = 27 <br>CV74 = 1 (On Time)<br>CV79 = 70 (Off Time) |
+| Rheinbrücke MESC<br>Rote LED soll immer blinken<br><br><br> | CV123 = 1<br>CV66 = 2<br>CV71 = 80<br>76 = 20 |
 
 
 ## Programmieren des prozessors
