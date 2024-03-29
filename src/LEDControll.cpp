@@ -139,11 +139,6 @@ void LED::process() {
 		}
 		break;
 
-	// allways on. Added for Modell Eisenbahn Club Seebezirk (MECS)
-	case 4:
-		on();
-		break;
-
 	default:
 		m_mode = 1;
 
