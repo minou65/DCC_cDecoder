@@ -12,8 +12,8 @@ siehe readme.md Programmieren des prozessors
 
 
 // ONLY uncomment 1 line below as approprate
-#define fDecoder;
-//#define cDecoder;
+//#define fDecoder;
+#define cDecoder;
 //#define sDecoder;
 
 // Uncomment to force CV Reset to Factory Defaults
@@ -53,7 +53,7 @@ uint8_t newSound = 0;
 #endif
 
 // This is the default DCC Address
-#define DEFAULT_DECODER_ADDRESS 3
+#define DEFAULT_DECODER_ADDRESS 4
 
 // This is the version
 #define DECODER_VERSION 3
@@ -382,6 +382,7 @@ CVPair FactoryDefaultCVs[] = {
 #endif // !sDecoder
 
     {CV_AUX_Save, 0},
+    {CV_ALLWAYS_ON, 0 },    // Aux1 = 1, Aux2 = 2, Aux3 = 4, Aux4 = 8, Aux5 = 16
 
 
 #ifdef sDecoder
@@ -620,14 +621,14 @@ void notifyDccFunc(uint16_t Addr, DCC_ADDR_TYPE AddrType, FN_GROUP FuncGrp, uint
         break;
 
     case FN_5_8:
-        SetFuncState(5, (FuncState & FN_BIT_01) ? 1 : 0);
-        SetFuncState(6, (FuncState & FN_BIT_01) ? 1 : 0);
-        SetFuncState(7, (FuncState & FN_BIT_01) ? 1 : 0);
-        SetFuncState(8, (FuncState & FN_BIT_01) ? 1 : 0);
+        SetFuncState(5, (FuncState & FN_BIT_05) ? 1 : 0);
+        SetFuncState(6, (FuncState & FN_BIT_06) ? 1 : 0);
+        SetFuncState(7, (FuncState & FN_BIT_07) ? 1 : 0);
+        SetFuncState(8, (FuncState & FN_BIT_08) ? 1 : 0);
         break;
 
     case FN_9_12:
-        SetFuncState(9, (FuncState & FN_BIT_01) ? 1 : 0);
+        SetFuncState(9, (FuncState & FN_BIT_09) ? 1 : 0);
         SetFuncState(10, (FuncState & FN_BIT_10) ? 1 : 0);
         SetFuncState(11, (FuncState & FN_BIT_11) ? 1 : 0);
         SetFuncState(12, (FuncState & FN_BIT_12) ? 1 : 0);
@@ -693,7 +694,10 @@ void SetFuncState(uint8_t Func, uint8_t state) {
             Aux[i].newState(state);
         }
 
-        Aux[i].newState(BIT_CHECK(AllwaysOn, bitmask[i]));
+        if (BIT_CHECK(AllwaysOn, bitmask[i])) {
+			Aux[i].newState(1);
+		}
+
     }
 
 #ifdef sDecoder
