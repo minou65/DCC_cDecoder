@@ -12,8 +12,8 @@ siehe readme.md Programmieren des prozessors
 
 
 // ONLY uncomment 1 line below as approprate
-//#define fDecoder;
-#define cDecoder;
+#define fDecoder;
+//#define cDecoder;
 //#define sDecoder;
 
 // Uncomment to force CV Reset to Factory Defaults
@@ -29,7 +29,7 @@ siehe readme.md Programmieren des prozessors
 //#define DEBUG_DCC_MSG
 //#define DEBUG_PRINT
 
-//#define LED_TEST
+// #define LED_TEST
 
 #ifdef sDecoder
 #include <DFRobotDFPlayerMini.h>
@@ -53,10 +53,10 @@ uint8_t newSound = 0;
 #endif
 
 // This is the default DCC Address
-#define DEFAULT_DECODER_ADDRESS 4
+#define DEFAULT_DECODER_ADDRESS 3
 
 // This is the version
-#define DECODER_VERSION 3
+#define DECODER_VERSION 4
 
 
 #ifdef __AVR_ATmega328P__
@@ -111,7 +111,6 @@ uint8_t newSound = 0;
 #else
 
 #define LED_PIN_AUX4 3
-#define LED_PIN_AUX5 5
 
 #define NUM_OUTPUTS 4
 
@@ -833,9 +832,9 @@ void setup() {
 
 
     digitalWrite(LED_PIN_FWD, HIGH);
-    delay(500);
+    delay(1000);
     digitalWrite(LED_PIN_REV, HIGH);
-    delay(500);
+    delay(1000);
     digitalWrite(LED_PIN_AUX3, HIGH);
     delay(500);
     digitalWrite(LED_PIN_AUX4, HIGH);
@@ -909,9 +908,6 @@ void setup() {
 #ifdef fDecoder
     Aux[AUX4].SetPin(LED_PIN_AUX4);
     Aux[AUX4].off();
-
-    Aux[AUX5].SetPin(LED_PIN_AUX5);
-    Aux[AUX5].off();
 #endif // fDecoder
 
 #endif 
