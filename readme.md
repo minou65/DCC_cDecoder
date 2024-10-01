@@ -30,6 +30,11 @@
 - Impuls
 - Blinker
 
+Der Attiny85 untersützt nur 5 Ausgänge. Die Funktionen sind auf die Ausgänge verteilt. Die Funktionen können über die CV's 66 - 70 eingestellt werden. 
+Die Blinkerfunktion kann über die CV's 71 - 75 eingestellt werden. Die Zeit für das Blinken kann über die CV's 76 - 80 eingestellt werden. 
+Die Zeit wird in 10ms Schritten angegeben. Die Helligkeit der Ausgänge kann über die CV's 81 und 82 eingestellt werden. 
+Die Zeit für das automatische abschalten kann über die CV's 86 - 90 eingestellt werden. Die Zeit wird in 10ms Schritten angegeben.
+
 ## Programmierung
 Um den Decoder auf dem Programmiergleis programmieren zu können muss eine Last an AUX 1 angeschlossen werden, die mindestens einen Strom von 60mA erzeugt.
 
