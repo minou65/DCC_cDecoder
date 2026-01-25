@@ -1,0 +1,1 @@
+attiny85.build.extra_flags=-I{build.source.path}/../src
