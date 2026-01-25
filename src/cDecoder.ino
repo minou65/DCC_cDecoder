@@ -10,6 +10,7 @@ siehe readme.md Programmieren des prozessors
 */
 
 #include "DecoderCoreConfig.h"
+#include "PinConfig.h"
 
 // This is the version
 #define DECODER_VERSION 4
